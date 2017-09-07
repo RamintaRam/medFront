@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
+import  'rxjs/Rx';
+
 
 @Injectable()
 export class UserService {
@@ -8,7 +10,7 @@ export class UserService {
 
     }
 
-    getUsers() {
+    getUsers(): Observable<any> {
         return this.http.get('http://localhost:4200/api/users')
             .map((response: Response) => {
                 return response.json().users;
