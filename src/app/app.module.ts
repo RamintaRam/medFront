@@ -8,12 +8,24 @@ import {AppComponent} from './app.component';
 import {AllUsersComponent} from './admin/users/all-users/all-users.component';
 import {UserComponent} from './admin/users/user/user.component';
 import {UserService} from './user.services';
+import { SigninComponent } from './admin/auth/signin/signin.component';
+import { SignoutComponent } from './admin/auth/signout/signout.component';
+import { AllPostsComponent } from './admin/posts/all-posts/all-posts.component';
+import {PostComponent} from './admin/posts/post/post.component';
+import {PostService} from './post.services';
+import {AuthService} from './auth.service';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AllUsersComponent,
-        UserComponent
+        UserComponent,
+        SigninComponent,
+        SignoutComponent,
+        AllPostsComponent,
+        PostComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,
@@ -21,7 +33,7 @@ import {UserService} from './user.services';
         HttpModule,
         routing
     ],
-    providers: [UserService],
+    providers: [UserService, PostService, AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
