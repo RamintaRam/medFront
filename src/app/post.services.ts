@@ -15,7 +15,8 @@ export class PostService {
         const token = this.authService.getToken();
         return this.http.get('http://medcare/api/users?token=' + token)
             .map((response: Response) => {
-                return response.json().posts;
-            });
+                    return response.json().posts;
+                }
+            );
     }
 }
