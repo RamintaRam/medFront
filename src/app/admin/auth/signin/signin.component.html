@@ -3,24 +3,24 @@
         <div class="panel-heading">
             <h4>Sign in</h4>
         </div>
-        <div class="panel-body">
+    </div>
+    <div class="panel-body">
 
-            <form (ngSubmit)="onSignin(f)" #f="ngForm">
+        <form (ngSubmit)="onSignin(f)" #f="ngForm">
+
             <div class="form-group">
-                <label for="email">E-mail address</label>
-                <input type="text" id="email" name="email" class="form-control" ngModel>
+                <label for="email">Email address:</label>
+                <input type="text" id="email" name="email" class="form-control" ngModel required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" ngModel>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" ngModel required>
             </div>
             <div class="form-group">
-                <button type="submit" [disabled]="!f.valid" name="button">Sign in</button>
+                <button type="submit" class='btn btn-primary' [disabled]="!f.valid" name="button">Sign in</button>
             </div>
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
 </div>
