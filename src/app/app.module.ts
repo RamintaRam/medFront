@@ -15,6 +15,7 @@ import {PostComponent} from './admin/posts/post/post.component';
 import {PostService} from './post.services';
 import {AuthService} from './auth.service';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import {AuthGuardService} from './auth.guard.service';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
         HttpModule,
         routing
     ],
-    providers: [UserService, PostService, AuthService],
+    providers: [UserService, PostService, AuthService, AuthGuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
