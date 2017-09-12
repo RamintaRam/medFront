@@ -1,6 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-  <h1>Users</h1>
+  <h4>Users</h4>
+    <div class="add-button-top pull-right">
+      <button routerLink="../add-user" type="button" class="btn btn-success" name="button">+ Add user</button>
+    </div>
 </div>
 <div class="panel-body">
   <table class="table">
@@ -10,6 +13,13 @@
       <th>Email</th>
       <th>Position</th>
       <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.postion}}</td>
+      <td>Edit | Delete</td>
     </tr>
   </table>
 </div>
