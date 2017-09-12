@@ -44,5 +44,10 @@ export class UserService {
             }
         );
     }
+
+    deleteUser(id: any) {
+        const token = this.authService.getToken();
+        return this.http.delete('http://medcare/api/user/' + id + '?token=' + token)
+    }
 }
 

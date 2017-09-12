@@ -7,19 +7,19 @@
       <form (ngSubmit)="onCreate(f)" #f="ngForm">
         <div class="form-group">
           <label for="first_name">First name</label>
-          <input class="form-control" type="text" id="first_name" name="first_name" value="" ngModel>
+          <input class="form-control" type="text" id="first_name" name="first_name" ngModel required>
         </div>
         <div class="form-group">
           <label for="last_name">Last name</label>
-          <input class="form-control" type="text" id="last_name" name="last_name" value="" ngModel>
+          <input class="form-control" type="text" id="last_name" name="last_name" ngModel>
         </div>
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input class="form-control" type="text" id="email" name="email" value="" ngModel>
+          <input class="form-control" type="text" id="email" name="email" ngModel>
         </div>
         <div class="form-group">
           <label for="position">Position</label>
-          <input class="form-control" type="text" id="position" name="position" value="" ngModel>
+          <input class="form-control" type="text" id="position" name="position" ngModel>
         </div>
 
         <div class="form-group">
@@ -34,11 +34,11 @@
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input class="form-control" type="text" id="password" name="password" value="" ngModel>
+          <input class="form-control" type="text" id="password" name="password" ngModel>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-success" name="button">Create user</button>
+          <button type="submit" class="btn btn-success" name="button" [disabled]="!f.valid">Create user</button>
         </div>
       </form>
     </div>

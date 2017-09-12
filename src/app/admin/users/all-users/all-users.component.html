@@ -19,7 +19,9 @@
       <td>{{user.last_name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.postion}}</td>
-      <td>Edit | Delete</td>
+      <td>Edit |
+        <a href="#" (click)="delete(user.id)">Delete</a></td>
+      <button type="button" class="btn btn-danger" name="button"><span class="glyphicon glyphicon-trash">Delete</span></button>
     </tr>
   </table>
 </div>
