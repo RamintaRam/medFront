@@ -31,8 +31,10 @@ export class EditUserComponent implements OnInit {
 
 
     public onUpdate(event: any) {
-        this.userService.updateUser(this.user);
-        this.router.navigate(['admin/users']);
+        this.userService.updateUser(this.user).subscribe(
+            user => this.router.navigate(['admin/users']),
+            error => console.log(error)
+        );
     }
 
 }

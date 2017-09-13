@@ -13,10 +13,12 @@ export class PostService {
 
     getPosts(): Observable<any> {
         const token = this.authService.getToken();
-        return this.http.get('http://medcare/api/users?token=' + token)
+        return this.http.get('http://medcare/api/posts?token=' + token)
             .map((response: Response) => {
                     return response.json().posts;
                 }
             );
     }
+
+
 }
