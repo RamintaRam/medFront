@@ -18,18 +18,17 @@ export class AddUserComponent implements OnInit {
     }
 
 
-    onCreate(form: NgForm)
-        {
-            this.userService.createUser(
-                form.value.first_name,
-                form.value.last_name,
-                form.value.email,
-                form.value.position,
-                form.value.password,
-                form.value.role_id,
-            ).subscribe(
-                response => this.router.navigate(['admin/users']),
-                error => console.log(error)
-            );
-        }
+    onCreate(form: NgForm) {
+        this.userService.createUser(
+            form.value.first_name,
+            form.value.last_name,
+            form.value.email,
+            form.value.position,
+            form.value.password,
+            form.value.role_id,
+        ).subscribe(
+            response => this.router.navigate(['admin/users']),
+            error => console.log(error)
+        );
+    }
 }
