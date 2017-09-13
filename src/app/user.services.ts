@@ -3,6 +3,7 @@ import {Http, Response, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import  'rxjs/Rx';
 import {AuthService} from './auth.service';
+import {User} from './user.interface';
 
 
 @Injectable()
@@ -17,6 +18,17 @@ export class UserService {
             .map(
                 (response: Response) => {
                     return response.json().users;
+                }
+            );
+    }
+
+
+    getUser(id: any): Observable<any> {
+        const token = this.authService.getToken();
+        return this.http.get('http://medcare/api/users/' + '?token' + token)
+            .map(
+                (response: Response) => {
+                    return response.json().user;
                 }
             );
     }
@@ -45,9 +57,20 @@ export class UserService {
         );
     }
 
+    updateUser(user: User) {
+        const token = this.authService.getToken();
+        return this.http.put('http://medcare/api/users/' + user.id + '?token=' + token,
+            {user},
+            {headers: new Headers({'Content-type': 'aplication/json'})}
+        ).map(
+            (response: Response) => response.json()
+        );
+    }
+
+
     deleteUser(id: any) {
         const token = this.authService.getToken();
-        return this.http.delete('http://medcare/api/user/' + id + '?token=' + token)
+        return this.http.delete('http://medcare/api/users/' + id + '?token=' + token);
     }
 }
 

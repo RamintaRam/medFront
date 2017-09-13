@@ -1,15 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../../../user.services';
+import {FormBuilder} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../../../user.interface';
+
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.css']
+    selector: 'app-edit-user',
+    templateUrl: './edit-user.component.html',
+    styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
 
-  constructor() { }
+    private user: User = new User();
 
-  ngOnInit() {
-  }
+
+    constructor(private userService: UserService,
+                private formBuilder: FormBuilder,
+                private router: Router,
+                private activatedRoute: ActivatedRoute) {
+    }
+
+    ngOnInit() {
+        let params: any = this.activatedRoute.snapshot.params;
+        this.userService.getUser(params.id).subscribe(
+            user => this.user = user,
+            error => console.log(error)
+        );
+    }
+
+
+    public onUpdate(event: any) {
+        this.userService.updateUser(this.user);
+        this.router.navigate(['admin/users']);
+    }
 
 }

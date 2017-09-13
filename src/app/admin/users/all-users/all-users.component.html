@@ -15,13 +15,15 @@
       <th>Action</th>
     </tr>
     <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
       <td>{{user.first_name}}</td>
       <td>{{user.last_name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.postion}}</td>
-      <td>Edit |
-        <a href="#" (click)="delete(user.id)">Delete</a></td>
-      <button type="button" class="btn btn-danger" name="button"><span class="glyphicon glyphicon-trash">Delete</span></button>
+      <td>
+        <button [routerLink]="['../edit-user', {id: user.id}]" type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
+      <button (click)="onDelete(user)" type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
     </tr>
   </table>
 </div>
