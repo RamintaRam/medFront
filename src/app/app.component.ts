@@ -8,10 +8,5 @@ import {Component} from '@angular/core';
 export class AppComponent {
     title = 'app';
 
-    isLoggedIn() {
-        if(localStorage.getItem('token')) {
-            return true;
-        }
-        return false;
-    }
+
 }
