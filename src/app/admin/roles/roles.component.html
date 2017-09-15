@@ -2,21 +2,21 @@
   <div class="panel-heading">
     <h4>Display {{roles.length}}</h4>
     <div class="add-button-top pull-right">
-      <button routerLink="/admin/users/new" type="button" class="btn btn-success" name="button">+ Add role</button>
+      <button routerLink="/admin/roles/new" type="button" class="btn btn-success" name="button">+ Add role</button>
     </div>
   </div>
   <div class="panel-body">
     <table class="table">
       <tr>
         <th>ID</th>
-        <th>Title</th>
-        <th>Text</th>
+        <th>Name</th>
+
 
       </tr>
       <tr *ngFor="let role of roles" >
-        <td>{{post.id}}</td>
-        <td>{{post.title}}</td>
-        <td>{{post.text}}</td>
+        <td>{{role.id}}</td>
+        <td>{{role.name}}</td>
+
         <td>
           <button  type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
           <button  type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>

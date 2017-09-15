@@ -63,7 +63,7 @@ export class PostFormComponent implements OnInit {
         }
 
         result.subscribe(
-            user => this.router.navigate(['admin/posts']),
+            post => this.router.navigate(['admin/posts']),
             error => console.log(error)
         );
     }
