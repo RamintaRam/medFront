@@ -40,4 +40,20 @@ export class RolesService {
                 (response: Response) => response.json()
             );
     }
+
+
+    updateRole(role) {
+        const token = this.authService.getToken();
+        return this.http.put('http://medcare/api/roles/' + role.id + '?token=' + token,
+            role, {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}).map(
+            (response: Response) => response.json()
+        );
+    }
+
+
+    deleteRole(id: any) {
+        const token = this.authService.getToken();
+        return this.http.delete('http://medcare/api/roles/' + id + '?token=' + token);
+    }
+
 }

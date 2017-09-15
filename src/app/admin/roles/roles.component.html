@@ -18,8 +18,8 @@
         <td>{{role.name}}</td>
 
         <td>
-          <button  type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
-          <button  type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>
+          <button [routerLink]="['/admin/roles', role.id]" type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button (click)="onDelete(role)" type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>
         </td>
       </tr>
     </table>
