@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Display {{roles.length}}</h4>
+    <div class="add-button-top pull-right">
+      <button routerLink="/admin/users/new" type="button" class="btn btn-success" name="button">+ Add role</button>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Text</th>
+
+      </tr>
+      <tr *ngFor="let role of roles" >
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.text}}</td>
+        <td>
+          <button  type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button  type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+

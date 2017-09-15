@@ -20,20 +20,39 @@ export class PostsService {
             );
     }
 
-    createPost(text: string,
-               title: string,
-          ) {
+    getPost(id: any): Observable<any> {
+        const token = this.authService.getToken();
+        return this.http.get('http://medcare/api/posts/' + id + '?token=' + token)
+            .map(
+                (response: Response) => {
+                    return response.json().post;
+                }
+            );
+    }
+
+
+    createPost(post) {
         const token = this.authService.getToken();
         return this.http.post('http://medcare/api/posts?token=' + token,
-            {
-                title: title,
-                text: text,
-            },
+            post,
             {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}
         ).map(
-            (response: Response) => {
-                return true;
-            }
+            (response: Response) => response.json()
         );
+    }
+
+
+    updatePost(post) {
+        const token = this.authService.getToken();
+        return this.http.put('http://medcare/api/posts/' + post.id + '?token=' + token,
+            post, {headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})}).map(
+            (response: Response) => response.json()
+        );
+    }
+
+
+    deletePost(id: any) {
+        const token = this.authService.getToken();
+        return this.http.delete('http://medcare/api/posts/' + id + '?token=' + token);
     }
 }

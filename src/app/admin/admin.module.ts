@@ -7,10 +7,11 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {AuthService} from './auth.service';
 import {AuthGuardService} from './auth.guard.service';
-import { UserFormComponent } from './users/user-form/user-form.component';
-import { PostFormComponent } from './posts/post-form/post-form.component';
+import {UserFormComponent} from './users/user-form/user-form.component';
+import {PostFormComponent} from './posts/post-form/post-form.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-
+import {RoleFormComponent} from './roles/role-form/role-form.component';
+import {RolesComponent} from './roles/roles.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
         NavBarComponent,
         UserFormComponent,
         PostFormComponent,
-        DashboardComponent
+        DashboardComponent,
+        RoleFormComponent
     ],
     exports: [
         NavBarComponent, SigninComponent

@@ -10,7 +10,7 @@ import {Response} from '@angular/http';
 })
 export class PostsComponent implements OnInit {
 
-    posts: Post[];
+    private posts: Post[] = [];
 
     constructor(private postsService: PostsService) {
 

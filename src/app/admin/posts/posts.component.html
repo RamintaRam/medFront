@@ -1,12 +1,11 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>Users</h4>
+        <h4>Display {{posts.length}}</h4>
         <div class="add-button-top pull-right">
-            <button routerLink="/admin/users/new" type="button" class="btn btn-success" name="button">+ Add post</button>
+            <button routerLink="/admin/posts/new" type="button" class="btn btn-success" name="button">+ Add post</button>
         </div>
     </div>
     <div class="panel-body">
-        <!--<app-post *ngFor="let post of posts" [post]="post"></app-post>-->
         <table class="table">
             <tr>
                 <th>ID</th>

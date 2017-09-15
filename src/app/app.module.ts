@@ -11,15 +11,16 @@ import {adminRouting} from './admin/admin.routing';
 import {usersRouting} from './admin/users/users.routing';
 import {UsersModule} from './admin/users/users.module';
 import {PostsModule} from './admin/posts/posts.module';
-import {SharedComponent} from './posts/shared/shared.component';
 import {postsRouting} from './admin/posts/posts.routing';
+import {RolesModule} from './admin/roles/roles.module';
+import {rolesRouting} from './admin/roles/roles.routing';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         NotFoundComponent,
-        SharedComponent
+
     ],
     imports: [
         BrowserModule,
@@ -32,7 +33,9 @@ import {postsRouting} from './admin/posts/posts.routing';
         UsersModule,
         usersRouting,
         PostsModule,
-        postsRouting
+        postsRouting,
+        RolesModule,
+        rolesRouting
 
 
     ],
