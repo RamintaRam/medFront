@@ -14,12 +14,25 @@ import {PostsModule} from './admin/posts/posts.module';
 import {postsRouting} from './admin/posts/posts.routing';
 import {RolesModule} from './admin/roles/roles.module';
 import {rolesRouting} from './admin/roles/roles.routing';
+import { BlogComponent } from './blog/blog.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { AboutComponent } from './about/about.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         NotFoundComponent,
+        BlogComponent,
+        HomeComponent,
+        GalleryComponent,
+        ContactsComponent,
+        AboutComponent,
+        RegistrationComponent,
+        MenuComponent,
 
     ],
     imports: [

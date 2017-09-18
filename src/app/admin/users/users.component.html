@@ -8,10 +8,12 @@
 <div class="panel-body">
   <table class="table">
     <tr>
+      <th>ID</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
       <th>Position</th>
+      <!--<th>Role</th>-->
       <th>Action</th>
     </tr>
     <tr *ngFor="let user of users">
@@ -20,7 +22,9 @@
       <td>{{user.last_name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.position}}</td>
+      <!--<td>{{user.roles[0].name}}</td>-->
       <td>
+        <!--<span  *ngFor="let role of user.roles">{{role.name}}</span>-->
         <button [routerLink]="['/admin/users', user.id]" type="button" class="btn btn-primary btn-xs" name="button"><span class="glyphicon glyphicon-pencil"></span></button>
       <button (click)="onDelete(user)" type="button" class="btn btn-danger btn-xs" name="button"><span class="glyphicon glyphicon-trash"></span></button>
       </td>

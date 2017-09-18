@@ -1,8 +1,10 @@
-<app-nav-bar></app-nav-bar>
+<app-menu *ngIf="!isAdminNavbar()"></app-menu>
+<app-nav-bar *ngIf="isAdminNavbar()"></app-nav-bar>
 <div id="app">
   <div class="container">
     <div class="row">
       <router-outlet></router-outlet>
+      <app-about></app-about>
     </div>
   </div>
 </div>

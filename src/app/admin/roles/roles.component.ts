@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Role} from './shared/roles';
+import {Role} from './shared/role';
 import {RolesService} from './shared/roles.service';
 import {Response} from '@angular/http';
 

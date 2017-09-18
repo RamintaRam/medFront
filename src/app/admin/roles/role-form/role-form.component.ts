@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Role} from '../shared/roles';
+import {Role} from '../shared/role';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RolesService} from '../shared/roles.service';
 
